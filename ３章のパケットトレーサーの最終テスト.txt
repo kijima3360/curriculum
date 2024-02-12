@@ -1,0 +1,106 @@
+
+
+PCにIPアドレス設定する
+
+ルーターのポートにIPアドレスを設定する
+Router#conf t
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address 192.168.1.254 255.255.255.0
+Router(config-if)#no shutdown
+上記のように設定する
+以下Ipアドレスを
+Router(config-if)#ip address 192.168.（2.254）ここを変更する 255.255.255.0
+のように設定する　　　　　　　　　　　
+全部のルーターを設定する
+
+
+ワークスペース上のノードをクリックしてください。
+設定画面のウィンドウが出たら、「config」のタブを選択します。
+真ん中の方に「Default Gateway」という項目があるので、G0/0のIPアドレスである「192.168.1.254」を記載してください。
+
+OSPFの設定
+hostname(config)#router ospf [プロセスID]
+hostname(config-router)#network [アドレス] [ワイルドカード] area [エリアID]
+
+Router(config)#router ospf 1
+Router(config-router)#network 192.168.0.0 0.0.255.255 area 0
+全部のルーターに設定する
+PCのピングが全部に通る
+
+
+Router1に対し、「192.168.4.0」宛にさらにスタティックルートを設定
+Router1# configure terminal
+Router(config)#ip route 192.168.4.0 255.255.255.0 192.168.4.254
+Router1(config)# exit
+
+ホップアドレスが「192.168.4.254」
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
